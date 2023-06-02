@@ -13,9 +13,9 @@
         "vcenter_password": "$.vcenter_password"
       },
       "Parameters": {
-        "provider_id": "$.attrs.dialog_provider",
-        "template": "$.attrs.dialog_source_template",
-        "name": "$.attrs.dialog_vm_name"
+        "provider_id": "$.dialog_provider",
+        "template": "$.dialog_source_template",
+        "name": "$.dialog_vm_name"
       }
     },
 
