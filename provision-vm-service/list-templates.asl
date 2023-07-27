@@ -11,7 +11,7 @@
         "api_password": "$.api_password"
       },
       "Parameters": {
-        "provider_id": "$.attrs.dialog_provider"
+        "provider_id": "$.dialog_provider"
       }
     }
   }
