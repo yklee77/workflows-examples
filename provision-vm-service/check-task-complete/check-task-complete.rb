@@ -3,13 +3,13 @@
 require "rbvmomi"
 require "json"
 
-secrets = JSON.load(File.read(ENV.fetch("SECRETS")))
+secrets = JSON.load(File.read(ENV.fetch("_CREDENTIALS")))
 
-vcenter_host     = ENV.fetch("vcenter_host")
+vcenter_host     = ENV.fetch("VCENTER_HOST")
 vcenter_user     = secrets["vcenter_user"]
 vcenter_password = secrets["vcenter_password"]
 
-task_ref = ENV.fetch("task")
+task_ref = ENV.fetch("TASK")
 
 vim = RbVmomi::VIM.connect(
   host: vcenter_host,

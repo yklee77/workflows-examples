@@ -4,18 +4,18 @@ require "pathname"
 require "json"
 require "rbvmomi"
 
-secrets = JSON.load(File.read(ENV.fetch("SECRETS")))
+secrets = JSON.load(File.read(ENV.fetch("_CREDENTIALS")))
 
 api_user     = secrets.fetch("api_user", "admin")
 api_password = secrets.fetch("api_password", "smartvm")
 
-api_url      = ENV.fetch("api_url", "http://localhost:3000")
-ems_id       = ENV.fetch("provider_id")
-template_ref = ENV.fetch("template")
-folder_ref   = ENV.fetch("folder", nil)
-host_ref     = ENV.fetch("host", nil)
-pool_ref     = ENV.fetch("respool", nil)
-vm_name      = ENV.fetch("name")
+api_url      = ENV.fetch("API_URL", "http://localhost:3000")
+ems_id       = ENV.fetch("PROVIDER_ID")
+template_ref = ENV.fetch("TEMPLATE")
+folder_ref   = ENV.fetch("FOLDER", nil)
+host_ref     = ENV.fetch("HOST", nil)
+pool_ref     = ENV.fetch("RESPOOL", nil)
+vm_name      = ENV.fetch("NAME")
 
 require "manageiq-api-client"
 api = ManageIQ::API::Client.new(:url => api_url, :user => api_user, :password => api_password)

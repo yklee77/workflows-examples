@@ -7,8 +7,8 @@ secrets = JSON.load(File.read(ENV.fetch("SECRETS")))
 api_user     = secrets.fetch("api_user", "admin")
 api_password = secrets.fetch("api_password", "smartvm")
 
-api_url = ENV.fetch("api_url", "http://localhost:3000")
-ems_id  = ENV.fetch("provider_id")
+api_url = ENV.fetch("API_URL", "http://localhost:3000")
+ems_id  = ENV.fetch("PROVIDER_ID")
 
 api = ManageIQ::API::Client.new(:url => api_url, :user => api_user, :password => api_password)
 
