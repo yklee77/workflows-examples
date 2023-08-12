@@ -5,7 +5,7 @@ require "rbvmomi"
 
 secrets = JSON.load(File.read(ENV.fetch("SECRETS")))
 
-vcenter_host     = ENV.fetch("vcenter_host")
+vcenter_host     = ENV.fetch("VCENTER_HOST")
 vcenter_user     = secrets["vcenter_user"]
 vcenter_password = secrets["vcenter_password"]
 

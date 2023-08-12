@@ -4,11 +4,11 @@ require "manageiq-api-client"
 
 secrets = JSON.load(File.read(ENV.fetch("SECRETS")))
 
-user     = secrets.fetch("user", "admin")
-password = secrets.fetch("password", "smartvm")
+user     = secrets.fetch("api_user", "admin")
+password = secrets.fetch("api_password", "smartvm")
 
-url           = ENV.fetch("api_url", "http://localhost:3000")
-provider_type = ENV.fetch("provider_type", nil)
+url           = ENV.fetch("API_URL", "http://localhost:3000")
+provider_type = ENV.fetch("PROVIDER_TYPE", nil)
 
 api = ManageIQ::API::Client.new(:url => url, :user => user, :password => password)
 

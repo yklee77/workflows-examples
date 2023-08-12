@@ -7,15 +7,15 @@
       "Resource": "docker://docker.io/agrare/clone-template:latest",
       "Next": "CheckTaskComplete",
       "Credentials": {
-        "api_user": "$.api_user",
-        "api_password": "$.api_password",
-        "vcenter_user": "$.vcenter_user",
-        "vcenter_password": "$.vcenter_password"
+        "api_user.$": "$.api_user",
+        "api_password.$": "$.api_password",
+        "vcenter_user.$": "$.vcenter_user",
+        "vcenter_password.$": "$.vcenter_password"
       },
       "Parameters": {
-        "provider_id": "$.dialog_provider",
-        "template": "$.dialog_source_template",
-        "name": "$.dialog_vm_name"
+        "PROVIDER_ID.$": "$.dialog_provider",
+        "TEMPLATE.$": "$.dialog_source_template",
+        "NAME.$": "$.dialog_vm_name"
       }
     },
 
@@ -24,12 +24,12 @@
       "Resource": "docker://docker.io/agrare/check-task-complete:latest",
       "Next": "PollTaskComplete",
       "Credentials": {
-        "vcenter_user": "$.vcenter_user",
-        "vcenter_password": "$.vcenter_password"
+        "vcenter_user.$": "$.vcenter_user",
+        "vcenter_password.$": "$.vcenter_password"
       },
       "Parameters": {
-        "vcenter_host": "$.vcenter_host",
-        "task": "$.task"
+        "VCENTER_HOST.$": "$.vcenter_host",
+        "TASK.$": "$.task"
       }
     },
 
@@ -66,12 +66,12 @@
       "Resource": "docker://docker.io/agrare/power-on-vm:latest",
       "Next": "SuccessState",
       "Credentials": {
-        "vcenter_user": "$.vcenter_user",
-        "vcenter_password": "$.vcenter_password"
+        "vcenter_user.$": "$.vcenter_user",
+        "vcenter_password.$": "$.vcenter_password"
       },
       "Parameters": {
-        "vcenter_host": "$.vcenter_host",
-        "vm": "$.vm"
+        "VCENTER_HOST.$": "$.vcenter_host",
+        "VM.$": "$.vm"
       }
     },
 
