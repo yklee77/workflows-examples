@@ -11,6 +11,7 @@
         "api_password.$": "$.api_password"
       },
       "Parameters": {
+        "API_URL": "https://9.37.205.139",
         "PROVIDER_TYPE.$": "ManageIQ::Providers::Vmware::InfraManager",
         "VERIFY_SSL": false
       }
