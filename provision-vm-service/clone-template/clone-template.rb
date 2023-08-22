@@ -10,6 +10,7 @@ api_user     = secrets.fetch("api_user", "admin")
 api_password = secrets.fetch("api_password", "smartvm")
 
 api_url      = ENV.fetch("API_URL", "http://localhost:3000")
+verify_ssl   = ENV.fetch("VERIFY_SSL", "true") == "true"
 ems_id       = ENV.fetch("PROVIDER_ID")
 template_ref = ENV.fetch("TEMPLATE")
 folder_ref   = ENV.fetch("FOLDER", nil)
@@ -18,7 +19,7 @@ pool_ref     = ENV.fetch("RESPOOL", nil)
 vm_name      = ENV.fetch("NAME")
 
 require "manageiq-api-client"
-api = ManageIQ::API::Client.new(:url => api_url, :user => api_user, :password => api_password)
+api = ManageIQ::API::Client.new(:url => api_url, :user => api_user, :password => api_password, :ssl => {:verify => verify_ssl})
 
 vcenter_host = api.providers.pluck(:id, :hostname).detect { |id, _| id == ems_id }.last
 

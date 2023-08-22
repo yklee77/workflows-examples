@@ -11,7 +11,8 @@
         "api_password.$": "$.api_password"
       },
       "Parameters": {
-        "PROVIDER_ID.$": "$.dialog.dialog_provider"
+        "PROVIDER_ID.$": "$.dialog.dialog_provider",
+        "VERIFY_SSL": false
       }
     }
   }

@@ -11,7 +11,8 @@
         "api_password.$": "$.api_password"
       },
       "Parameters": {
-        "PROVIDER_TYPE.$": "ManageIQ::Providers::Vmware::InfraManager"
+        "PROVIDER_TYPE.$": "ManageIQ::Providers::Vmware::InfraManager",
+        "VERIFY_SSL": false
       }
     }
   }
