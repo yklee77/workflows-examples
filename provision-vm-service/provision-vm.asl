@@ -14,6 +14,7 @@
       },
       "Parameters": {
         "PROVIDER_ID.$": "$.dialog_provider",
+        "VERIFY_SSL": false,
         "TEMPLATE.$": "$.dialog_source_template",
         "NAME.$": "$.dialog_vm_name"
       }
